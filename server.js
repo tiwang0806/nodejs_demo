@@ -12,11 +12,8 @@ function start(route, hanlders) {
 		handle["/start"] = requestHandlers.start;
 		handle["/upload"] = requestHandlers.upload;
 		
-		route(pathname, handle);
+		route(pathname, handle, response);
 
-		response.writeHead(200, {"Content-Type":"text/plain"});
-		response.write("hello world");
-		response.end();
 	}
 	var server = http.createServer(onRequest);
 	server.listen(8888);
